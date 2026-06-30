@@ -1,16 +1,16 @@
 .badge {
   display: inline-flex;
   align-items: center;
-  height: 26px;
-  padding: 0 10px;
+  height: 32px;
+  padding: 0 14px;
   border-radius: 999px;
   background: var(--primary-accent-15);
   border: 1px solid var(--primary-accent-30);
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
   color: var(--ink-dominant);
-  gap: 6px;
+  gap: 7px;
   white-space: nowrap;
   transition: background 200ms ease, border-color 200ms ease, transform 200ms ease;
 }
@@ -22,11 +22,10 @@
 }
 
 .dot {
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: var(--primary-accent);
-  transition: background 200ms ease;
 }
 
 .badge:hover .dot {
