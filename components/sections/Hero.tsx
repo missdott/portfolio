@@ -7,7 +7,7 @@ export default function Hero() {
       <div className={styles.hero}>
         <div className={styles.heroLeft}>
           <div className={styles.eyebrow}>
-            <span className={styles.eyebrowLine} /> CEBU-BASED COMPUTER ENGINEERING - 2026
+            <span className={styles.eyebrowLine} /> CEBU-BASED COMPUTER ENGINEERING
           </div>
 
           <h1 className="t-display">
@@ -27,16 +27,16 @@ export default function Hero() {
 
           <div className={styles.statsRow}>
             <div className={styles.stat}>
-              <div className={styles.statNum}>8.5+</div>
-              <div className={styles.statLabel}>YEARS IN PRACTICE</div>
+              <div className={styles.statNum}>3</div>
+              <div className={styles.statLabel}>PROJECTS BUILT</div>
             </div>
             <div className={styles.stat}>
-              <div className={styles.statNum}>42</div>
-              <div className={styles.statLabel}>SHIPPED PRODUCTS</div>
+              <div className={styles.statNum}>2023</div>
+              <div className={styles.statLabel}>STARTED AT CIT-U</div>
             </div>
             <div className={styles.stat}>
-              <div className={styles.statNum}>120+</div>
-              <div className={styles.statLabel}>VARIANT COMPONENTS</div>
+              <div className={styles.statNum}>&lt;24h</div>
+              <div className={styles.statLabel}>USUAL RESPONSE TIME</div>
             </div>
           </div>
         </div>
