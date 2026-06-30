@@ -49,7 +49,10 @@ export async function getProjects(): Promise<Project[] | null> {
   try {
     const { data, error } = await supabase
       .from('projects')
-      .select('id, index_label, title, description, badges')
+      .select(
+        'id, index_label, title, description, badges, tags, is_featured, role, year, why_it_mattered, what_it_does, what_i_learned, project_url'
+      )
+      .order('is_featured', { ascending: false })
       .order('sort_order', { ascending: true });
 
     if (error) throw error;

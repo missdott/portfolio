@@ -5,14 +5,10 @@
   margin-bottom: 48px;
   gap: 24px;
 }
-.sectionDesc {
-  margin-top: 12px;
-  max-width: 480px;
-}
 
 .eyebrow {
   font-family: var(--font-mono);
-  font-size: 19px;
+  font-size: 12px;
   color: var(--ink-subdued);
   display: flex;
   align-items: center;
@@ -32,63 +28,177 @@
 .card {
   background: var(--surface-container);
   border: 1px solid var(--border-divider);
-  border-radius: 16px;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-large);
-  border-color: var(--primary-accent-30);
-}
-
-.thumb {
-  height: 180px;
-  background: linear-gradient(135deg, rgba(102, 125, 157, 0.35), rgba(6, 8, 23, 0.2)),
-    repeating-linear-gradient(45deg, rgba(102, 125, 157, 0.08) 0 2px, transparent 2px 14px);
-  position: relative;
+  border-radius: 20px;
+  padding: 32px;
   display: flex;
-  align-items: flex-end;
-  padding: 16px;
+  flex-direction: column;
+  height: 560px;
+  overflow-y: auto;
+}
+
+.cardHead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+.card::-webkit-scrollbar {
+  width: 4px;
+}
+
+.card::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.card::-webkit-scrollbar-thumb {
+  background: var(--primary-accent-30);
+  border-radius: 4px;
 }
 
 .index {
   font-family: var(--font-mono);
-  font-size: 18px;
-  color: var(--ink-subdued);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--border-divider);
 }
 
-.body {
-  padding: 22px;
+.tagRow {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  color: var(--ink-subdued);
+  border: 1px solid var(--border-divider);
+  border-radius: 999px;
+  padding: 4px 10px;
+  white-space: nowrap;
+}
+
+.featuredBadge {
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  color: var(--surface-canvas);
+  background: var(--primary-accent);
+  border-radius: 999px;
+  padding: 4px 10px;
+  white-space: nowrap;
 }
 
 .title {
   font-family: var(--font-h);
-  font-weight: 600;
-  font-size: 19px;
+  font-weight: 700;
+  font-size: 24px;
   color: var(--ink-dominant);
+  margin-bottom: 8px;
 }
 
-.desc {
+.metaRow {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.role {
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  color: var(--primary-accent);
+}
+
+.year {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-subdued);
+}
+
+.intro {
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.6;
+  font-size: 15px;
+  line-height: 1.65;
   color: var(--ink-reading);
+  margin-bottom: 20px;
+}
+
+.block {
+  margin-bottom: 18px;
+}
+
+.blockLabel {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--primary-accent);
+  margin-bottom: 8px;
+}
+
+.blockText {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--ink-reading);
+}
+
+.checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.checklistItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink-reading);
+}
+
+.checkIcon {
+  color: var(--primary-accent);
+  font-weight: 700;
+  flex-shrink: 0;
 }
 
 .badgeRow {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 12px;
+  margin-bottom: 16px;
+}
+
+.visitLink {
+  display: inline-block;
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--ink-dominant);
+  border-bottom: 1px solid var(--primary-accent);
+  padding-bottom: 2px;
+  transition: color 200ms ease;
+}
+
+.visitLink:hover {
+  color: var(--primary-accent);
 }
 
 .empty {
   font-family: var(--font-mono);
-  font-size: 16px;
+  font-size: 12px;
   color: var(--ink-subdued);
   padding: 24px;
   text-align: center;

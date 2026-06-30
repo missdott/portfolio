@@ -11,6 +11,14 @@ export interface Project {
   title: string;
   description: string;
   badges: string[];
+  tags: string[];
+  is_featured: boolean;
+  role: string | null;
+  year: string | null;
+  why_it_mattered: string | null;
+  what_it_does: string[];
+  what_i_learned: string | null;
+  project_url: string | null;
 }
 
 export interface StackItem {
