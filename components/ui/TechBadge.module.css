@@ -1,0 +1,34 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  height: 26px;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: var(--primary-accent-15);
+  border: 1px solid var(--primary-accent-30);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--ink-dominant);
+  gap: 6px;
+  white-space: nowrap;
+  transition: background 200ms ease, border-color 200ms ease, transform 200ms ease;
+}
+
+.badge:hover {
+  background: var(--primary-accent-30);
+  border-color: var(--primary-accent);
+  transform: translateY(-2px);
+}
+
+.dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--primary-accent);
+  transition: background 200ms ease;
+}
+
+.badge:hover .dot {
+  background: var(--ink-dominant);
+}

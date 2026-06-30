@@ -1,0 +1,119 @@
+.aboutSection {
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.codeWindow {
+  width: 100%;
+  background: rgba(6, 8, 23, 0.6);
+  border-radius: 12px;
+  border: 1px solid var(--border-divider);
+  padding: 40px 36px;
+}
+
+.fileTab {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-subdued);
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-divider);
+}
+
+.dots {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--primary-accent-30);
+}
+
+.line {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--ink-subdued);
+  margin-bottom: 16px;
+  display: flex;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.n {
+  color: var(--ink-subdued);
+  opacity: 0.5;
+  width: 14px;
+  flex-shrink: 0;
+}
+
+.codeAccent {
+  color: var(--primary-accent);
+}
+
+.pale {
+  color: var(--ink-dominant);
+}
+
+.aboutCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 19px;
+  color: var(--ink-subdued);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.eyebrowNum {
+  color: var(--primary-accent);
+}
+
+.bodyCopy {
+  max-width: 560px;
+}
+
+.pillarGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 8px;
+}
+
+.pillarTitle {
+  font-family: var(--font-h);
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--ink-dominant);
+  margin-bottom: 8px;
+}
+
+.pillarDesc {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--ink-reading);
+}
+
+.badgeRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+@media (max-width: 1024px) {
+  .aboutSection {
+    grid-template-columns: 1fr;
+  }
+}
