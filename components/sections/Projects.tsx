@@ -83,6 +83,9 @@ export default async function Projects() {
           <h2 className="t-h1" style={{ marginTop: 12 }}>
             Selected case studies.
           </h2>
+          <p className={`t-body ${styles.sectionDesc}`}>
+             A closer look at a few projects I've built.
+          </p>
         </div>
       </div>
 

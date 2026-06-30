@@ -7,6 +7,11 @@ import {
   SiGit,
   SiNodedotjs,
   SiSupabase,
+  SiFirebase,
+  SiVercel,
+  SiDart,
+  SiFlutter,
+  SiPostgresql,
 } from 'react-icons/si';
 import { getStackItems, getCapabilities } from '@/lib/supabase';
 import TechBadge from '@/components/ui/TechBadge';
@@ -22,6 +27,11 @@ const ICONS = [
   { Icon: SiGit, label: 'Git' },
   { Icon: SiNodedotjs, label: 'Node.js' },
   { Icon: SiSupabase, label: 'Supabase' },
+  { Icon: SiFirebase, label: 'Firebase' },
+  { Icon: SiVercel, label: 'Vercel' },
+  { Icon: SiDart, label: 'Dart' },
+  { Icon: SiFlutter, label: 'Flutter' },
+  { Icon: SiPostgresql, label: 'PostgreSQL' },
 ];
 
 const STACK_FALLBACK: StackItem[] = [
@@ -35,6 +45,10 @@ const STACK_FALLBACK: StackItem[] = [
   { id: 'fallback-8', label: 'Git' },
   { id: 'fallback-9', label: 'Figma' },
   { id: 'fallback-10', label: 'Supabase' },
+  { id: 'fallback-11', label: 'Firebase' },
+  { id: 'fallback-12', label: 'Vercel' },
+  { id: 'fallback-13', label: 'Dart' },
+  { id: 'fallback-14', label: 'Flutter' },
 ];
 
 const CAPABILITIES_FALLBACK: Capability[] = [
