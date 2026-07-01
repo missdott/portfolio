@@ -1,14 +1,13 @@
 .navStage {
   position: sticky;
-  top: 24px;
+  top: 8px;
   z-index: 90;
   display: flex;
   justify-content: center;
-  padding-top: 24px;
+  padding-top: 8px;
   padding-left: 34px;
   padding-right: 34px;
 }
-
 .navbar {
   position: relative;
   height: 64px;

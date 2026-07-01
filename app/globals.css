@@ -112,10 +112,10 @@ body {
 }
 
 .section-pad {
-  padding-top: 120px;
+  padding-top: 48px;
   padding-bottom: 120px;
+  scroll-margin-top: 80px;
 }
-
 /* ============================================================
    TYPOGRAPHY SYSTEM
    ============================================================ */

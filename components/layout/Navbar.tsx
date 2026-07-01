@@ -27,9 +27,7 @@ export default function Navbar() {
         });
       },
       {
-        // Triggers when a section crosses the vertical middle of the viewport,
-        // rather than the moment it merely touches the top/bottom edge.
-        rootMargin: '-45% 0px -45% 0px',
+        rootMargin: '-20% 0px -70% 0px',
         threshold: 0,
       }
     );
