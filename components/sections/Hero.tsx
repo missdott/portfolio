@@ -1,4 +1,3 @@
-import Button from '@/components/ui/Button';
 import styles from './Hero.module.css';
 
 export default function Hero() {
@@ -21,8 +20,20 @@ export default function Hero() {
           </p>
 
           <div className={styles.ctaRow}>
-            <Button variant="primary">Explore Portfolio</Button>
-            <Button variant="secondary">View Resume</Button>
+            <a
+              href="#contact"
+              className={styles.btnPrimary}
+            >
+              Let&apos;s Talk
+            </a>
+            <a
+              href="/Resume_Izzy_Kasandra_Donque.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.btnSecondary}
+            >
+              View Resume
+            </a>
           </div>
 
           <div className={styles.statsRow}>
