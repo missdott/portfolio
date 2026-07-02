@@ -1,18 +1,13 @@
 # Supabase Schema — Current Version
 
-This replaces the original `SCHEMA.md`. The portfolio's components changed
-significantly since that file was written (About lost its pillars/badges,
-Skills became a marquee + stack panel + capability cards instead of a flat
-service list) — this schema matches what the code **actually** reads today.
-
-Run this in the Supabase SQL Editor (Project → SQL Editor → New query).
-You can paste the whole thing at once.
+Four tables total. Run the SQL blocks in the Supabase SQL Editor.
+If you already ran an earlier version of this schema, use the
+migration files instead of re-running the full `CREATE TABLE` blocks
+(which would fail with "relation already exists").
 
 ---
 
-## 1. `about_content`
-
-A **singleton** table — exactly one row, fetched with `.single()`.
+## 1. `about_content` — singleton row
 
 ```sql
 create table about_content (
@@ -23,10 +18,7 @@ create table about_content (
 );
 
 alter table about_content enable row level security;
-
-create policy "Public read access"
-  on about_content for select
-  using (true);
+create policy "Public read access" on about_content for select using (true);
 
 insert into about_content (heading, body) values (
   'I build software that prioritizes simplicity, clear purpose, and the small details that make user experiences effortless.',
@@ -36,43 +28,68 @@ insert into about_content (heading, body) values (
 
 ---
 
-## 2. `projects`
+## 2. `projects` — one row per project
 
-One row per project card. Ordered by `sort_order` ascending.
+Includes the full detailed-card fields added in the migration.
 
 ```sql
 create table projects (
-  id           uuid primary key default gen_random_uuid(),
-  sort_order   int not null default 0,
-  index_label  text,
-  title        text not null,
-  description  text not null,
-  badges       text[] not null default '{}',
-  created_at   timestamptz not null default now()
+  id               uuid primary key default gen_random_uuid(),
+  sort_order       int not null default 0,
+  index_label      text,
+  title            text not null,
+  description      text not null,
+  badges           text[] not null default '{}',
+  tags             text[] not null default '{}',
+  is_featured      boolean not null default false,
+  role             text,
+  year             text,
+  why_it_mattered  text,
+  what_it_does     text[] not null default '{}',
+  what_i_learned   text,
+  project_url      text,
+  created_at       timestamptz not null default now()
 );
 
 alter table projects enable row level security;
-
-create policy "Public read access"
-  on projects for select
-  using (true);
-
-insert into projects (sort_order, index_label, title, description, badges) values
-  (1, '01', 'Orbital — Design System', 'A 200+ component variant library built in Figma, shipped as a themeable React kit.', array['Figma','React']),
-  (2, '02', 'Lumen — Mobile Banking', 'Cross-platform fintech app built with React Native and biometric-secured flows.', array['React Native','TypeScript']),
-  (3, '03', 'Aperture — Analytics Suite', 'Editorial dark-mode dashboard with live data viz and component-driven layout.', array['Auto Layout','D3.js']);
+create policy "Public read access" on projects for select using (true);
 ```
 
-Replace these 3 example rows with your real projects whenever you're ready —
-either re-run `insert` statements with your own values, or use the Supabase
-Table Editor UI instead of SQL.
+**Adding a project row via Table Editor:**
+
+| Field | Notes |
+|---|---|
+| `sort_order` | Controls display order — lower = first |
+| `index_label` | e.g. `01`, `02` — shown on the card |
+| `title` | Project name |
+| `description` | Short intro paragraph |
+| `badges` | Tech stack pills — format: `{"React","TypeScript"}` |
+| `tags` | Category labels — format: `{"Frontend","UI/UX"}` |
+| `is_featured` | `true` on at most one project — shows FEATURED badge |
+| `role` | Your role, e.g. `Full-Stack Developer` |
+| `year` | e.g. `2026` or `2025` |
+| `why_it_mattered` | One paragraph |
+| `what_it_does` | Checklist items — format: `{"Item one","Item two"}` |
+| `what_i_learned` | One paragraph |
+| `project_url` | Full URL including `https://` — or leave empty |
+
+**If you already have a `projects` table and need to add the new columns:**
+
+```sql
+alter table projects
+  add column if not exists tags text[] not null default '{}',
+  add column if not exists is_featured boolean not null default false,
+  add column if not exists role text,
+  add column if not exists year text,
+  add column if not exists why_it_mattered text,
+  add column if not exists what_it_does text[] not null default '{}',
+  add column if not exists what_i_learned text,
+  add column if not exists project_url text;
+```
 
 ---
 
-## 3. `stack_items`
-
-The pill badges inside the "STACK OVERVIEW" panel on the left of the Skills
-section. Ordered by `sort_order` ascending.
+## 3. `stack_items` — Stack Overview pills in Skills section
 
 ```sql
 create table stack_items (
@@ -83,30 +100,27 @@ create table stack_items (
 );
 
 alter table stack_items enable row level security;
-
-create policy "Public read access"
-  on stack_items for select
-  using (true);
+create policy "Public read access" on stack_items for select using (true);
 
 insert into stack_items (sort_order, label) values
-  (1, 'React'),
-  (2, 'Next.js'),
-  (3, 'TypeScript'),
-  (4, 'JavaScript'),
-  (5, 'Node.js'),
-  (6, 'Tailwind CSS'),
-  (7, 'PostgreSQL'),
-  (8, 'Git'),
-  (9, 'Figma'),
+  (1,  'React'),
+  (2,  'Next.js'),
+  (3,  'TypeScript'),
+  (4,  'JavaScript'),
+  (5,  'Node.js'),
+  (6,  'Tailwind CSS'),
+  (7,  'PostgreSQL'),
+  (8,  'Git'),
+  (9,  'Figma'),
   (10, 'Supabase');
 ```
 
+To add more pills: use Table Editor → `stack_items` → Insert row.
+Set `sort_order` to a number higher than your existing rows.
+
 ---
 
-## 4. `capabilities`
-
-The four cards on the right of the Skills section (Interface Architecture,
-State & Data Handling, etc.). Ordered by `sort_order` ascending.
+## 4. `capabilities` — the 4 cards in Skills section
 
 ```sql
 create table capabilities (
@@ -119,10 +133,7 @@ create table capabilities (
 );
 
 alter table capabilities enable row level security;
-
-create policy "Public read access"
-  on capabilities for select
-  using (true);
+create policy "Public read access" on capabilities for select using (true);
 
 insert into capabilities (sort_order, index_label, title, description) values
   (1, '01', 'Interface Architecture', 'Designing component-driven layouts with reusable logic, responsive breakpoints, and accessible interactions that scale across devices and platforms.'),
@@ -133,36 +144,26 @@ insert into capabilities (sort_order, index_label, title, description) values
 
 ---
 
-## Not stored in Supabase (intentionally)
+## What is NOT in Supabase
 
-- **Marquee icons** (the scrolling Figma/React/TypeScript/etc. logos) — these
-  are paired with imported icon *components* from `react-icons`, not plain
-  text, so they stay hardcoded in `Skills.tsx` in the `ICONS` array. To
-  add/remove a marquee icon, edit that array directly in the code.
-- **Contact form** — has no table at all. It posts straight to your
-  Formspree endpoint via `app/api/contact/route.ts`. No schema needed.
+| Thing | Why |
+|---|---|
+| Marquee icons (Skills section) | Paired with imported React components — edit the `ICONS` array in `Skills.tsx` directly |
+| Contact form | Posts to Formspree via `/api/contact` — no table needed |
 
 ---
 
-## Wiring it up
-
-In `.env.local` (and later in Vercel's environment variables):
+## Environment variables
 
 ```
 SUPABASE_URL=https://xxxxxxxx.supabase.co
-SUPABASE_SERVICE_ROLE_KEY=your-service-role-key-here
+SUPABASE_SERVICE_ROLE_KEY=sb_secret_...
+FORMSPREE_ENDPOINT=https://formspree.io/f/xxxxxxxx
 ```
 
-Get both from your Supabase project: **Project Settings → API**.
-- `SUPABASE_URL` is the "Project URL"
-- `SUPABASE_SERVICE_ROLE_KEY` is the **service_role** key (not the `anon` key)
+Get from Supabase: **Project Settings → API Keys**.
+- `SUPABASE_URL` = Project URL (bare domain, no `/rest/v1/` path)
+- `SUPABASE_SERVICE_ROLE_KEY` = the **secret** key (not publishable)
 
-The service_role key is safe here specifically because every Supabase call in
-this codebase happens inside Server Components (`About.tsx`, `Projects.tsx`,
-`Skills.tsx`) — none of it ships to the browser. Never put this key in a
-Client Component or expose it in any client-side fetch call.
-
-If a table is empty or a fetch fails for any reason, each section silently
-falls back to the hardcoded `FALLBACK` content already in the component —
-nothing breaks, nothing shows an error to visitors. Failures are only logged
-to the server console.
+Add these to `.env.local` for local dev, and to
+**Vercel → Project Settings → Environment Variables** for production.

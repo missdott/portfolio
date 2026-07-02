@@ -38,7 +38,7 @@ export default function Hero() {
 
           <div className={styles.statsRow}>
             <div className={styles.stat}>
-              <div className={styles.statNum}>3</div>
+              <div className={styles.statNum}>3+</div>
               <div className={styles.statLabel}>PROJECTS BUILT</div>
             </div>
             <div className={styles.stat}>
