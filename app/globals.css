@@ -11,10 +11,10 @@
   --surface-container: #16254F;
 
   /* — Colors / Primary — */
-  --primary-accent: #667D9D;
-  --primary-accent-15: rgba(102, 125, 157, 0.15);
-  --primary-accent-25: rgba(102, 125, 157, 0.25);
-  --primary-accent-30: rgba(102, 125, 157, 0.30);
+  --primary-accent: #C49A3C;
+  --primary-accent-15: rgba(196, 154, 60, 0.15);
+  --primary-accent-25: rgba(196, 154, 60, 0.25);
+  --primary-accent-30: rgba(196, 154, 60, 0.30);
 
   /* — Colors / Border — */
   --border-divider: rgba(102, 125, 157, 0.25);
@@ -25,7 +25,7 @@
   --ink-subdued: rgba(172, 187, 198, 0.60);
 
   /* — Effects — */
-  --glow-accent: 0 0 0 1px rgba(102, 125, 157, 0.35), 0 8px 24px rgba(102, 125, 157, 0.25), 0 0 40px rgba(102, 125, 157, 0.18);
+  --glow-accent: 0 0 0 1px rgba(196, 154, 60, 0.35), 0 8px 24px rgba(196, 154, 60, 0.25), 0 0 40px rgba(196, 154, 60, 0.18);
   --shadow-large: 0 24px 48px rgba(2, 4, 12, 0.55), 0 4px 12px rgba(2, 4, 12, 0.4);
   --shadow-card: 0 12px 32px rgba(2, 4, 12, 0.45);
 
@@ -70,8 +70,8 @@ body {
   z-index: 0;
   pointer-events: none;
   background:
-    radial-gradient(ellipse 900px 600px at 18% 8%, rgba(102, 125, 157, 0.16), transparent 60%),
-    radial-gradient(ellipse 700px 500px at 85% 22%, rgba(102, 125, 157, 0.10), transparent 55%),
+    radial-gradient(ellipse 900px 600px at 18% 8%, rgba(196, 154, 60, 0.10), transparent 60%),
+    radial-gradient(ellipse 700px 500px at 85% 22%, rgba(196, 154, 60, 0.07), transparent 55%),
     radial-gradient(ellipse 1000px 800px at 50% 90%, rgba(22, 37, 79, 0.5), transparent 60%),
     var(--surface-canvas);
 }
@@ -116,6 +116,7 @@ body {
   padding-bottom: 120px;
   scroll-margin-top: 80px;
 }
+
 /* ============================================================
    TYPOGRAPHY SYSTEM
    ============================================================ */
