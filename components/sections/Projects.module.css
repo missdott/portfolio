@@ -5,10 +5,12 @@
   margin-bottom: 48px;
   gap: 24px;
 }
+
 .sectionDesc {
   margin-top: 12px;
   max-width: 480px;
 }
+
 .eyebrow {
   font-family: var(--font-mono);
   font-size: 19px;
@@ -39,13 +41,6 @@
   overflow-y: auto;
 }
 
-.cardHead {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 14px;
-}
 .card::-webkit-scrollbar {
   width: 4px;
 }
@@ -57,6 +52,14 @@
 .card::-webkit-scrollbar-thumb {
   background: var(--primary-accent-30);
   border-radius: 4px;
+}
+
+.cardHead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
 }
 
 .index {
@@ -209,14 +212,72 @@
   border-radius: 12px;
 }
 
+/* ---- Tablet (1024px and below) ---- */
 @media (max-width: 1024px) {
   .grid {
     grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .card {
+    height: 640px;
+    padding: 24px;
+  }
+
+  .sectionHead {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 32px;
+  }
+
+  .sectionDesc {
+    max-width: 100%;
   }
 }
 
+/* ---- Mobile (640px and below) ---- */
 @media (max-width: 640px) {
   .grid {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .card {
+    height: 560px;
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .eyebrow {
+    font-size: 13px;
+  }
+
+  .sectionHead {
+    margin-bottom: 24px;
+  }
+}
+
+/* ---- Small mobile (380px and below) ---- */
+@media (max-width: 380px) {
+  .card {
+    height: 480px;
+    padding: 16px;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+
+  .cardHead {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .tagRow {
+    justify-content: flex-start;
   }
 }

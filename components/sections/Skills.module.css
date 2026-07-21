@@ -5,6 +5,7 @@
   margin-bottom: 48px;
   gap: 24px;
 }
+
 .sectionDesc {
   margin-top: 12px;
   max-width: 480px;
@@ -74,12 +75,8 @@
 }
 
 @keyframes scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
 /* ---- Split row: Stack Overview (left) + Capabilities (right) ---- */
@@ -173,12 +170,103 @@
   color: var(--ink-reading);
 }
 
+.empty {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-subdued);
+  padding: 24px;
+  text-align: center;
+  border: 1px dashed var(--border-divider);
+  border-radius: 12px;
+}
+
+/* ---- Tablet (1024px and below) ---- */
 @media (max-width: 1024px) {
   .splitRow {
     grid-template-columns: 1fr;
+    margin-top: 40px;
+    gap: 20px;
+  }
+
+  .capabilityGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .sectionHead {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 32px;
+  }
+
+  .sectionDesc {
+    max-width: 100%;
+  }
+}
+
+/* ---- Mobile (640px and below) ---- */
+@media (max-width: 640px) {
+  .marqueeTrack {
+    gap: 32px;
+  }
+
+  .logoItem {
+    width: 48px;
+    height: 48px;
+  }
+
+  .logoIcon {
+    font-size: 36px;
   }
 
   .capabilityGrid {
     grid-template-columns: 1fr;
+  }
+
+  .stackPanel {
+    padding: 20px 24px;
+  }
+
+  .stackLabel {
+    font-size: 14px;
+  }
+
+  .capabilityTitle {
+    font-size: 16px;
+  }
+
+  .capabilityDesc {
+    font-size: 14px;
+  }
+
+  .eyebrow {
+    font-size: 13px;
+  }
+
+  .splitRow {
+    margin-top: 28px;
+  }
+}
+
+/* ---- Small mobile (380px and below) ---- */
+@media (max-width: 380px) {
+  .logoItem {
+    width: 40px;
+    height: 40px;
+  }
+
+  .logoIcon {
+    font-size: 28px;
+  }
+
+  .marqueeTrack {
+    gap: 24px;
+  }
+
+  .capabilityCard {
+    padding: 16px;
+  }
+
+  .stackPanel {
+    padding: 16px 18px;
   }
 }

@@ -157,21 +157,13 @@
 }
 
 @keyframes orbitSpin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 @keyframes counterSpin {
-  from {
-    transform: translateX(-50%) rotate(0deg);
-  }
-  to {
-    transform: translateX(-50%) rotate(-360deg);
-  }
+  from { transform: translateX(-50%) rotate(0deg); }
+  to { transform: translateX(-50%) rotate(-360deg); }
 }
 
 .ring {
@@ -239,27 +231,99 @@
 }
 
 @keyframes pulseRing {
-  0% {
-    transform: scale(0.6);
-    opacity: 0.8;
-  }
-  100% {
-    transform: scale(2.2);
-    opacity: 0;
-  }
+  0% { transform: scale(0.6); opacity: 0.8; }
+  100% { transform: scale(2.2); opacity: 0; }
 }
 
 @keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
+/* ---- Tablet (1024px and below) ---- */
 @media (max-width: 1024px) {
   .hero {
     grid-template-columns: 1fr;
+    min-height: unset;
+    padding-top: 48px;
+    padding-bottom: 40px;
+  }
+
+  .heroRight {
+    height: 400px;
+  }
+
+  .orbitFrame {
+    width: 320px;
+    height: 320px;
+  }
+
+  .tagCounter {
+    top: -160px;
+  }
+}
+
+/* ---- Mobile (640px and below) ---- */
+@media (max-width: 640px) {
+  .hero {
+    gap: 32px;
+    padding-top: 32px;
+  }
+
+  .heroLeft {
+    gap: 20px;
+  }
+
+  .subCopy {
+    max-width: 100%;
+  }
+
+  .statsRow {
+    gap: 24px;
+  }
+
+  .statNum {
+    font-size: 22px;
+  }
+
+  .statLabel {
+    font-size: 11px;
+  }
+
+  .heroRight {
+    height: 320px;
+  }
+
+  .orbitFrame {
+    width: 260px;
+    height: 260px;
+  }
+
+  .tagCounter {
+    top: -130px;
+  }
+
+  .hotspot {
+    font-size: 11px;
+    padding: 6px 10px 6px 8px;
+  }
+}
+
+/* ---- Small mobile (380px and below) ---- */
+@media (max-width: 380px) {
+  .heroRight {
+    display: none;
+  }
+
+  .ctaRow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .btnPrimary,
+  .btnSecondary {
+    width: 100%;
+    justify-content: center;
   }
 }
