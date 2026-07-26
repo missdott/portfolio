@@ -11,6 +11,7 @@
   border-radius: 12px;
   border: 1px solid var(--border-divider);
   padding: 40px 36px;
+  overflow-x: auto;
 }
 
 .fileTab {
@@ -112,8 +113,39 @@
   margin-top: 8px;
 }
 
+/* ---- Tablet (1024px and below) ---- */
 @media (max-width: 1024px) {
   .aboutSection {
     grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .bodyCopy {
+    max-width: 100%;
+  }
+}
+
+/* ---- Mobile (640px and below) ---- */
+@media (max-width: 640px) {
+  .aboutSection {
+    gap: 28px;
+  }
+
+  .codeWindow {
+    padding: 24px 20px;
+  }
+
+  .line {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+
+  .eyebrow {
+    font-size: 14px;
+  }
+
+  .pillarGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
 }
