@@ -7,8 +7,8 @@
 
 :root {
   /* — Colors / Surface — */
-  --surface-canvas: #060817;
-  --surface-container: #16254F;
+  --surface-canvas: #070810;
+  --surface-container: #181f3a;
 
   /* — Colors / Primary — */
   --primary-accent: #C49A3C;
@@ -17,17 +17,17 @@
   --primary-accent-30: rgba(196, 154, 60, 0.30);
 
   /* — Colors / Border — */
-  --border-divider: rgba(102, 125, 157, 0.25);
+  --border-divider: rgba(180, 155, 100, 0.18);
 
   /* — Colors / Ink — */
-  --ink-dominant: #ECECEC;
-  --ink-reading: #ACBBC6;
-  --ink-subdued: rgba(172, 187, 198, 0.60);
+  --ink-dominant: #F0EDE8;
+  --ink-reading: #B8B0A8;
+  --ink-subdued: rgba(184, 176, 168, 0.60);
 
   /* — Effects — */
   --glow-accent: 0 0 0 1px rgba(196, 154, 60, 0.35), 0 8px 24px rgba(196, 154, 60, 0.25), 0 0 40px rgba(196, 154, 60, 0.18);
-  --shadow-large: 0 24px 48px rgba(2, 4, 12, 0.55), 0 4px 12px rgba(2, 4, 12, 0.4);
-  --shadow-card: 0 12px 32px rgba(2, 4, 12, 0.45);
+  --shadow-large: 0 24px 48px rgba(4, 3, 2, 0.55), 0 4px 12px rgba(4, 3, 2, 0.4);
+  --shadow-card: 0 12px 32px rgba(4, 3, 2, 0.45);
 
   /* — Type — */
   --font-display: 'Poppins', sans-serif;
@@ -81,19 +81,19 @@ body {
   position: absolute;
   inset: 0;
   background-image:
-    radial-gradient(1px 1px at 10% 15%, rgba(236, 236, 236, 0.6) 50%, transparent),
-    radial-gradient(1px 1px at 25% 45%, rgba(236, 236, 236, 0.4) 50%, transparent),
-    radial-gradient(1.5px 1.5px at 40% 8%, rgba(236, 236, 236, 0.5) 50%, transparent),
-    radial-gradient(1px 1px at 60% 30%, rgba(236, 236, 236, 0.35) 50%, transparent),
-    radial-gradient(1px 1px at 75% 60%, rgba(236, 236, 236, 0.5) 50%, transparent),
-    radial-gradient(1.5px 1.5px at 90% 12%, rgba(236, 236, 236, 0.4) 50%, transparent),
-    radial-gradient(1px 1px at 15% 75%, rgba(236, 236, 236, 0.45) 50%, transparent),
-    radial-gradient(1px 1px at 50% 85%, rgba(236, 236, 236, 0.3) 50%, transparent),
-    radial-gradient(1.5px 1.5px at 95% 80%, rgba(236, 236, 236, 0.4) 50%, transparent),
-    radial-gradient(1px 1px at 33% 95%, rgba(236, 236, 236, 0.3) 50%, transparent);
+    radial-gradient(1px 1px at 10% 15%, rgba(255, 248, 230, 0.9) 50%, transparent),
+    radial-gradient(1px 1px at 25% 45%, rgba(255, 248, 230, 0.7) 50%, transparent),
+    radial-gradient(1.5px 1.5px at 40% 8%, rgba(255, 248, 230, 0.85) 50%, transparent),
+    radial-gradient(1px 1px at 60% 30%, rgba(255, 248, 230, 0.65) 50%, transparent),
+    radial-gradient(1px 1px at 75% 60%, rgba(255, 248, 230, 0.8) 50%, transparent),
+    radial-gradient(1.5px 1.5px at 90% 12%, rgba(255, 248, 230, 0.75) 50%, transparent),
+    radial-gradient(1px 1px at 15% 75%, rgba(255, 248, 230, 0.7) 50%, transparent),
+    radial-gradient(1px 1px at 50% 85%, rgba(255, 248, 230, 0.6) 50%, transparent),
+    radial-gradient(1.5px 1.5px at 95% 80%, rgba(255, 248, 230, 0.75) 50%, transparent),
+    radial-gradient(1px 1px at 33% 95%, rgba(255, 248, 230, 0.6) 50%, transparent);
   background-repeat: repeat;
   background-size: 600px 600px;
-  opacity: 0.8;
+  opacity: 1;
 }
 
 .wrap {
